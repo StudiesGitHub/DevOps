@@ -1,5 +1,13 @@
+import { Header } from "./components/Header";
+
 function App() {
-  return <div>Hellow World</div>;
+  return (
+    <div>
+      <div>
+        <Header />{" "}
+      </div>
+    </div>
+  );
 }
 
 export default App;
