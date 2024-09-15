@@ -13,9 +13,9 @@ jobs:
       - name: Simulando Continuous Delivery
         uses: actions/upload-artifact@v4
         with:
-          name: projetozipado.zip
+          name: projetozipado
           path: |
-            '**.tsx'
+            **.tsx
             README.md
 
   deploy:
@@ -24,6 +24,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: projetozipado.zip
+          name: projetozipado
       - name: Display structure of  download  files
         run: ls -R
