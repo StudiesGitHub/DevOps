@@ -18,5 +18,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: typos-action
-      - uses: crate-ci/typos@v1.20.1
