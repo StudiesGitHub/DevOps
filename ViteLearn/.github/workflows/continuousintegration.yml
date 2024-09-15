@@ -1,11 +1,10 @@
-name: Continuous Integrations
 on:
+  push:
   pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  eslint:
+    name: eslint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -19,4 +18,3 @@ jobs:
         uses: icrawl/action-eslint@v1
         with:
           custom-glob: apps # only if a different glob is needed, default: src
-
