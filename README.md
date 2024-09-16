@@ -1,2 +1,0 @@
-# DevOps
-Personal studies repo
