@@ -1,12 +1,11 @@
-FROM python:3
+FROM python:3.10
 
-WORKDIR /usr/src/app
+WORKDIR /code
 
-COPY requirements.txt ./
+COPY requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install "fastapi[standard]"
 
-COPY . .
-
 EXPOSE 80
+COPY . .
 CMD [ "fastapi", "run", "./main.py", "--port", "80" ]
