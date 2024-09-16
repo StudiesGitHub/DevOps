@@ -19,12 +19,12 @@ jobs:
             **.py
             README.md
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: deliver
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: projetozipado
-      - name: Display structure of donwloaded files
-        run: ls -R
+#  deploy:
+#    runs-on: ubuntu-latest
+#    needs: deliver
+#    steps:
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: projetozipado
+#      - name: Display structure of donwloaded files
+#        run: ls -R
