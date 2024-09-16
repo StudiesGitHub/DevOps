@@ -7,6 +7,7 @@ function App() {
         <Header />
         <div>Hello world</div>
         <div>Hello world</div>
+        <div>Hello world</div>
       </div>
     </div>
   );
