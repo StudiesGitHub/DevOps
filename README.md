@@ -1,2 +1,3 @@
 # DevOps
-Personal studies repo
+
+Repositório dedicado aos entregáveis da disciplina DevOps

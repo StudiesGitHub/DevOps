@@ -1,12 +1,13 @@
-FROM python:3.10
+FROM ubuntu:latest
 
-WORKDIR /code
+RUN mkdir /app
+WORKDIR /app
 
-COPY ./requirements.txt /code/requirements.txt
-
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-EXPOSE 80
 COPY . .
-CMD ["fastapi", "run", "main.py", "--port", "80"]
 
+RUN apt-get update
+RUN apt-get install python3 -y
+RUN apt-get install python3-pip -y
+RUN apt-get install python3-flask -y
+
+CMD python3 app.py
