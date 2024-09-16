@@ -1,15 +1,12 @@
-FROM node:18-alpine
+FROM python:3.10
 
-WORKDIR /user/src/app
+WORKDIR /code
 
-COPY package.json .
+COPY ./requirements.txt /code/requirements.txt
 
-RUN npm install
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
+EXPOSE 80
 COPY . .
+CMD ["fastapi", "run", "main.py", "--port", "80"]
 
-ENV PORT=8080
-
-EXPOSE 8080
-
-CMD [ "npm", "run", "dev"]
