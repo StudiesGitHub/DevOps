@@ -1,15 +1,13 @@
-FROM node:18-alpine
+FROM ubuntu:latest
 
-WORKDIR /user/src/app
-
-COPY package.json .
-
-RUN npm install
+RUN mkdir /app
+WORKDIR /app
 
 COPY . .
 
-ENV PORT=8080
+RUN apt-get update
+RUN apt-get install python3 -y
+RUN apt-get install python3-pip -y
+RUN apt-get install python3-flask -y
 
-EXPOSE 8080
-
-CMD [ "npm", "run", "dev"]
+CMD python3 app.py
